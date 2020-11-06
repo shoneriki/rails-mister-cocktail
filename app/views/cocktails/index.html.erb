@@ -1,14 +1,15 @@
 <div class="container">
 <h1>Cocktails</h1>
 
+
   <div class="cards">
       <% @cocktails.each do |cocktail|  %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cocktail.photo.attached? ? cl_image_path(cocktail.photo.key)
-: "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/mojito-cocktails-814a3f7.jpg" %>')>
+    <div class="card-category" style="background-image: url(<%= cocktail.photo.attached? ? cl_image_path(cocktail.photo.key)
+: "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/mojito-cocktails-814a3f7.jpg"%>)">
         <p><%= link_to cocktail.name.upcase, cocktail_path(cocktail)  %></p>
     </div>
       <% end  %>  
   </div>
-<%= link_to "Add a cocktail", new_cocktail_path(@cocktail), class: "btn btn-success my-5"  %>
+
 
 </div>
