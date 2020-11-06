@@ -1,7 +1,8 @@
 
 <div class="container">
-  
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @cocktail.photo.key, height: 300, width: 400, crop: :fill %>');">
+
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cocktail.photo.attached? ? cl_image_path(cocktail.photo.key)
+: "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/mojito-cocktails-814a3f7.jpg" %>');">
   <div class="container-banner">
     <p class="text-white"><%= @cocktail.name.upcase %></p>
     
